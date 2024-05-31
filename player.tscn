@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7f3g2dok0jdx"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_5ddth"]
+[ext_resource type="Texture2D" uid="uid://seqoluj64w1" path="res://kenney_space-shooter-redux/PNG/playerShip1_blue.png" id="2_47oeh"]
+[ext_resource type="Script" path="res://HealthDisplay.gd" id="4_f301d"]
+[ext_resource type="AudioStream" uid="uid://bjn8msagj115b" path="res://sound/hurtsound.ogg" id="4_h4e43"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlb8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_47oeh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lffoj"]
+size = Vector2(13, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10ptq"]
+size = Vector2(45, 11)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_5ddth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nlb8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lffoj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_10ptq")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -21)
+
+[node name="HealthDisplay" type="Node2D" parent="."]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("4_f301d")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 99.9997
+offset_bottom = -71.0002
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+
+[node name="AbilitySound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h4e43")
+max_polyphony = 3

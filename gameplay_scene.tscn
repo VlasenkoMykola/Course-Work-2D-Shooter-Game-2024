@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddpjdevflxin5"]
+
+[ext_resource type="Script" path="res://Enemy_Spawner.gd" id="1_gtymh"]
+[ext_resource type="PackedScene" uid="uid://c7f3g2dok0jdx" path="res://player.tscn" id="1_tentu"]
+[ext_resource type="Texture2D" uid="uid://dho8xqfc4ckog" path="res://sbs_-_seamless_space_backgrounds_-_large_1024x1024/Large 1024x1024/Blue Nebula/Blue Nebula 1 - 1024x1024.png" id="3_2adck"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="3_s4adl"]
+[ext_resource type="AudioStream" uid="uid://bxt3hoyckvaa4" path="res://sound/Cyber Advance.ogg" id="5_uwas2"]
+[ext_resource type="Script" path="res://UI_Bar.gd" id="6_avtto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5u7g"]
+size = Vector2(16, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxl14"]
+size = Vector2(834, 18)
+
+[node name="Gameplay_Scene" type="Node2D"]
+
+[node name="Enemy Spawner" type="Node2D" parent="."]
+script = ExtResource("1_gtymh")
+
+[node name="Player" parent="." instance=ExtResource("1_tentu")]
+position = Vector2(381, 781)
+
+[node name="Map_Border" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Border"]
+position = Vector2(808, 400)
+shape = SubResource("RectangleShape2D_b5u7g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map_Border"]
+position = Vector2(-8, 400)
+shape = SubResource("RectangleShape2D_b5u7g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map_Border"]
+position = Vector2(400, 808)
+shape = SubResource("RectangleShape2D_sxl14")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map_Border"]
+position = Vector2(400, -8)
+shape = SubResource("RectangleShape2D_sxl14")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_s4adl")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(424, 440)
+texture = ExtResource("3_2adck")
+
+[node name="ParallaxLayer_Transition" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer_Transition"]
+position = Vector2(424, 440)
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_uwas2")
+volume_db = -6.0
+autoplay = true
+
+[node name="UI_Bar" type="ColorRect" parent="."]
+offset_top = 800.0
+offset_right = 800.0
+offset_bottom = 904.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_avtto")
+
+[node name="Overclock" type="Control" parent="UI_Bar"]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 50.0
+offset_right = 320.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="UI_Bar/Overclock"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 88.0
+offset_bottom = 26.0
+text = "Overclock (X)"
+
+[node name="OverclockBar" type="TextureProgressBar" parent="UI_Bar/Overclock"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 38.0
+
+[node name="Shield" type="Control" parent="UI_Bar"]
+anchors_preset = 0
+offset_left = 16.0
+offset_right = 320.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI_Bar/Shield"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Deflector Shield (C)"
+
+[node name="ShieldBar" type="TextureProgressBar" parent="UI_Bar/Shield"]
+layout_mode = 0
+offset_left = 152.0
+offset_right = 336.0
+offset_bottom = 40.0
+
+[node name="Drone" type="Control" parent="UI_Bar"]
+anchors_preset = 0
+offset_left = 400.0
+offset_right = 704.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI_Bar/Drone"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Deploy Drone (Z)"
+
+[node name="DroneBar" type="TextureProgressBar" parent="UI_Bar/Drone"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 320.0
+offset_bottom = 40.0
+
+[node name="Currency" type="Label" parent="UI_Bar"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 800.0
+offset_bottom = 96.0
+text = "Galactic Credits: 0"

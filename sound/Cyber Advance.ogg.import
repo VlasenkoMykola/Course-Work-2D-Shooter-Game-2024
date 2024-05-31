@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxt3hoyckvaa4"
+path="res://.godot/imported/Cyber Advance.ogg-5a186a77257504efe40e9c2deacccb98.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/Cyber Advance.ogg"
+dest_files=["res://.godot/imported/Cyber Advance.ogg-5a186a77257504efe40e9c2deacccb98.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

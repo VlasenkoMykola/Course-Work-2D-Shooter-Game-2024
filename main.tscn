@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca4vkmv7eunej"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_cq04v"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="2_dofdn"]
+[ext_resource type="Texture2D" uid="uid://grj3lcqu3si" path="res://sbs_-_seamless_space_backgrounds_-_large_1024x1024/Large 1024x1024/Blue Nebula/Blue Nebula 8 - 1024x1024.png" id="3_ge68o"]
+[ext_resource type="Script" path="res://ItemList_Start.gd" id="4_uiv8w"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kwu6e"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_cq04v")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 182.0
+offset_right = 476.0
+offset_bottom = 291.0
+text = "Play
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 400.0
+offset_right = 476.0
+offset_bottom = 509.0
+text = "Quit"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_dofdn")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(424, 440)
+texture = ExtResource("3_ge68o")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 258.0
+offset_bottom = 415.0
+text = "Made by Vlasenko Mykola
+
+Controls:
+Arrows - move
+Space - shoot
+Shift - open upgrade menu
+(you get currency for upgrades by killing enemies)
+Number keys - change weapon (if unlocked)"
+
+[node name="ItemList_Start" type="ItemList" parent="."]
+offset_left = 515.0
+offset_top = 188.0
+offset_right = 784.0
+offset_bottom = 345.0
+item_count = 5
+item_0/text = "Normal Start"
+item_0/icon = SubResource("ViewportTexture_kwu6e")
+item_1/text = "Start after shotgun boss"
+item_2/text = "Start after sniper boss"
+item_3/text = "Start after machinegun boss"
+item_4/text = "Start after carrier boss"
+script = ExtResource("4_uiv8w")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="ItemList_Start" to="ItemList_Start" method="_on_item_selected"]

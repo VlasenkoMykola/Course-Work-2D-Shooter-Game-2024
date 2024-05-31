@@ -1,0 +1,14 @@
+res://enemy.tscn::d4b41359c52da9f9d090ca359c739438::1698683220::res://.godot/exported/133200997/export-ec12bd2205a8e44213188668d747d7fa-enemy.scn
+res://enemy_bullet.tscn::fcbd80094d963d54d3b9769ef2810a89::1715155046::res://.godot/exported/133200997/export-3b92cad3021407f7a716f5c1b41f5a2a-enemy_bullet.scn
+res://gameplay_scene.tscn::e52f7f3f92464194f23b5e94914b4c99::1715155046::res://.godot/exported/133200997/export-f5129c2aefdae2ea350992e103bd5381-gameplay_scene.scn
+res://main.tscn::edf3c68028f011988de58f7759482c4a::1715155046::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://player.tscn::88a00dd9f5c0091ce70481f08ceadaff::1715155046::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://player_bullet.tscn::23c5e5623a5058c7a22246cd7cc623a6::1715155046::res://.godot/exported/133200997/export-8a02b203e2ef7780c89b47d666cf3781-player_bullet.scn
+res://explosion.tscn::bf9c53b46316ebef27736e908a500a8c::1715155046::res://.godot/exported/133200997/export-37f562657059001060a0639ef053daa5-explosion.scn
+res://upgrade_button.tscn::5cc398a7ace23d1ea15e6b8913c7b4a6::1715155046::res://.godot/exported/133200997/export-b22af049c5ee3f2e18546aa6b5db01ce-upgrade_button.scn
+res://upgrade_ui.tscn::c3de3ed1dbbab2d87492b57190b940de::1715155046::res://.godot/exported/133200997/export-8136bde7b0e562cf0503acaf6edeb1bb-upgrade_ui.scn
+res://player_bullet_anim_explosion.tscn::ed8a74af1d3fa3c4ad1b9342a1599f64::1715155046::res://.godot/exported/133200997/export-f61765e5dfce051e7973f71dd7cc8f8c-player_bullet_anim_explosion.scn
+res://player_bullet_explosive.tscn::9dafab0de129e876064bd63342a1931b::1715155046::res://.godot/exported/133200997/export-0d4bdbc145f77db7eafd5b313a19271f-player_bullet_explosive.scn
+res://deflector_shield_player.tscn::e160c6aa808461353637e6b4e93ade0b::1715155046::res://.godot/exported/133200997/export-cb0fc499be4ccde5f9901c3ae6b36d09-deflector_shield_player.scn
+res://deflector_shield_enemy.tscn::483a7abd12b9824752c68547aab57a9a::1715155047::res://.godot/exported/133200997/export-6c26ed08537b0fb8b15eea72e1671dd9-deflector_shield_enemy.scn
+res://default_bus_layout.tres::307ec4fdc6d33f2504af26c926f2bcf2::1715104661::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res

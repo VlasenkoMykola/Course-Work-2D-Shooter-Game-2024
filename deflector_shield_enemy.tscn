@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm3c3oi6j7iur"]
+
+[ext_resource type="Script" path="res://DeflectorShield_Enemy.gd" id="1_463n3"]
+[ext_resource type="Texture2D" uid="uid://c34u66igfbthc" path="res://other_images/elven-shield-halo-100pct.png" id="2_i7oq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uxnh"]
+radius = 32.9848
+
+[node name="DeflectorShield_Enemy" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_463n3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4uxnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0901961, 0.0588235, 1)
+position = Vector2(-0.999992, -3.33333)
+scale = Vector2(1.1125, 1.075)
+texture = ExtResource("2_i7oq4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

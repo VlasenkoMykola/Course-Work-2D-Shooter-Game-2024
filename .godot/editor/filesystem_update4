@@ -1,0 +1,13 @@
+res://default_bus_layout.tres
+res://main.tscn
+res://gameplay_scene.tscn
+res://enemy_bullet.tscn
+res://player.tscn
+res://player_bullet.tscn
+res://explosion.tscn
+res://upgrade_ui.tscn
+res://upgrade_button.tscn
+res://player_bullet_explosive.tscn
+res://player_bullet_anim_explosion.tscn
+res://deflector_shield_player.tscn
+res://deflector_shield_enemy.tscn

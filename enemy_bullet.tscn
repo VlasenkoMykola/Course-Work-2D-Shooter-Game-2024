@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cookmjlywv4nt"]
+
+[ext_resource type="Script" path="res://enemy_bullet.gd" id="1_13b8a"]
+[ext_resource type="Texture2D" uid="uid://6hf4pkukfwo0" path="res://kenney_space-shooter-redux/PNG/Lasers/laserRed01.png" id="2_tje51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuq47"]
+size = Vector2(4, 14.25)
+
+[node name="EnemyBullet" type="Area2D" groups=["Enemy_Projectiles"]]
+script = ExtResource("1_13b8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tje51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_nuq47")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

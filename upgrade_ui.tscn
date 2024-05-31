@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bye37u8gueyjd"]
+
+[ext_resource type="Script" path="res://upgrade_ui.gd" id="1_wxfy6"]
+
+[sub_resource type="GDScript" id="GDScript_mmh83"]
+script/source = "extends Label
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Galactic Credits: \"+ str(Globals.Currency)
+"
+
+[node name="Upgrade_UI" type="Control"]
+process_mode = 3
+modulate = Color(0.788235, 0.85098, 0.941176, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wxfy6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 900.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 568.0
+offset_top = 750.0
+offset_right = 760.0
+offset_bottom = 846.0
+text = "Done"
+
+[node name="Currency" type="Label" parent="."]
+layout_mode = 2
+offset_left = 640.0
+offset_top = 8.0
+offset_right = 800.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test"
+script = SubResource("GDScript_mmh83")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
